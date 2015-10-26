@@ -33,9 +33,9 @@ def scrape_person(url)
   name = noko.css('#DeltaPlaceHolderPageTitleInTitleArea').first.text.tidy
   warn "Scraping #{name}"
   data = {
-    id: name.parameterize,
     name: name,
     picture: URI.join(url, noko.css('.ms-rte-layoutszone-inner img').first[:src]).to_s,
+    term: 8,
     source: url.to_s
   }
   ScraperWiki.save_sqlite([:id], data)
