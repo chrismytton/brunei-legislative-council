@@ -43,7 +43,7 @@ end
 
 term = {
   id: 11,
-  name: 'Term 11',
+  name: '11th Legislative Council',
   start_date: '2015-03-05',
   end_date: '2015-03-24'
 }
