@@ -30,14 +30,18 @@ end
 
 def scrape_person(url)
   noko = noko_for(url)
-  name = noko.css('#DeltaPlaceHolderPageTitleInTitleArea').first.text.tidy
-  warn "Scraping #{name}"
+  warn "Scraping #{url}"
+  name_and_area = noko.xpath('//div[@class="ms-rte-layoutszone-inner"]/p[1]')
+  prefix, name = name_and_area.xpath('./text()').map(&:text).map(&:tidy)
+  _position, area = name_and_area.xpath('./strong/text()')
   data = {
     name: name,
+    honorific_prefix: prefix,
     picture: URI.join(url, noko.css('.ms-rte-layoutszone-inner img').first[:src]).to_s,
     term: 11,
     source: url.to_s
   }
+  data[:area] = area.to_s.gsub(/Daerah|Mukim|,/, '').tidy if area
   ScraperWiki.save_sqlite([:name, :term], data)
 end
 
