@@ -1,25 +1,44 @@
-# This is a template for a Ruby scraper on morph.io (https://morph.io)
-# including some code snippets below that you should find helpful
+require 'scraperwiki'
+require 'nokogiri'
+require 'open-uri'
+require 'active_support'
+require 'active_support/core_ext'
 
-# require 'scraperwiki'
-# require 'mechanize'
-#
-# agent = Mechanize.new
-#
-# # Read in a page
-# page = agent.get("http://foo.com")
-#
-# # Find somehing on the page using css selectors
-# p page.at('div.content')
-#
-# # Write out to the sqlite database using scraperwiki library
-# ScraperWiki.save_sqlite(["name"], {"name" => "susan", "occupation" => "software developer"})
-#
-# # An arbitrary query against the database
-# ScraperWiki.select("* from data where 'name'='peter'")
+require 'open-uri/cached'
+OpenURI::Cache.cache_path = '.cache'
 
-# You don't have to do things with the Mechanize or ScraperWiki libraries.
-# You can use whatever gems you want: https://morph.io/documentation/ruby
-# All that matters is that your final data is written to an SQLite database
-# called "data.sqlite" in the current working directory which has at least a table
-# called "data".
+class String
+  def tidy
+    self.gsub(/[[:space:]]+/, ' ').strip
+  end
+end
+
+def noko_for(url)
+  Nokogiri::HTML(open(url).read)
+end
+
+def scrape_list(url)
+  noko = noko_for(url)
+  people = noko.xpath('//div[@class="ms-rte-layoutszone-inner"]//table//td//a[contains(@href, ".aspx")]/@href')
+  people.each do |person_path|
+    # Workaround for UTF-8 characters in the url which upset URI.join
+    person_path = URI.escape(URI.unescape(person_path.to_s))
+    person_url = URI.join(url, person_path)
+    scrape_person(person_url)
+  end
+end
+
+def scrape_person(url)
+  noko = noko_for(url)
+  name = noko.css('#DeltaPlaceHolderPageTitleInTitleArea').first.text.tidy
+  warn "Scraping #{name}"
+  data = {
+    id: name.parameterize,
+    name: name,
+    picture: URI.join(url, noko.css('.ms-rte-layoutszone-inner img').first[:src]).to_s,
+    source: url.to_s
+  }
+  ScraperWiki.save_sqlite([:id], data)
+end
+
+scrape_list('http://majlis-mesyuarat.gov.bn/JMM%20Site%20Pages/Profil%20Ahli-Ahli%20Majlis%20Mesyuarat%20Negara.aspx')
