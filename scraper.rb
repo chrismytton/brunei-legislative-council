@@ -38,7 +38,7 @@ def scrape_person(url)
     term: 8,
     source: url.to_s
   }
-  ScraperWiki.save_sqlite([:id], data)
+  ScraperWiki.save_sqlite([:name, :term], data)
 end
 
 scrape_list('http://majlis-mesyuarat.gov.bn/JMM%20Site%20Pages/Profil%20Ahli-Ahli%20Majlis%20Mesyuarat%20Negara.aspx')
