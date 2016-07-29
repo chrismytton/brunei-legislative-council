@@ -1,0 +1,61 @@
+---
+request:
+  method: get
+  uri: http://majlis-mesyuarat.gov.bn/JMM%20Site%20Pages/Yang%20Berhormat%20%20Haji%20A.%20Ahmad%20bin%20Husain.aspx
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - '*/*'
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Cache-Control:
+    - private, max-age=0
+    Content-Type:
+    - text/html; charset=utf-8
+    Expires:
+    - Thu, 14 Jul 2016 13:35:14 GMT
+    Last-Modified:
+    - Fri, 29 Jul 2016 13:35:14 GMT
+    Vary:
+    - Accept-Encoding
+    Server:
+    - Microsoft-IIS/8.0
+    X-Sharepointhealthscore:
+    - '0'
+    X-Aspnet-Version:
+    - 4.0.30319
+    Sprequestguid:
+    - a890949d-3db1-e0d7-3cc7-1c9ecc79a284
+    Request-Id:
+    - a890949d-3db1-e0d7-3cc7-1c9ecc79a284
+    X-Frame-Options:
+    - SAMEORIGIN
+    Sprequestduration:
+    - '120'
+    Spiislatency:
+    - '0'
+    X-Powered-By:
+    - ASP.NET
+    Microsoftsharepointteamservices:
+    - 15.0.0.4711
+    X-Content-Type-Options:
+    - nosniff
+    X-Ms-Invokeapp:
+    - 1; RequireReadOnly
+    Date:
+    - Fri, 29 Jul 2016 13:35:14 GMT
+    Content-Length:
+    - '30755'
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Fri, 29 Jul 2016 13:34:27 GMT
