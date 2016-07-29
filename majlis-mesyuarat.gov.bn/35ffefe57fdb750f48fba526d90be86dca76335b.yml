@@ -1,0 +1,61 @@
+---
+request:
+  method: get
+  uri: http://majlis-mesyuarat.gov.bn/JMM%20Site%20Pages/Yang%20Berhormat%20Haji%20Awang%20Ahmad%20Morshidi%20bin%20Pehin%20Orang%20Kaya%20Digadong%20Seri%20Diraja%20Dato%20Laila%20Utama%20Haji%20Awang%20Abdul%20Rahman.aspx
+  body:
+    encoding: US-ASCII
+    string: ''
+  headers:
+    Accept-Encoding:
+    - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+    Accept:
+    - '*/*'
+    User-Agent:
+    - Ruby
+response:
+  status:
+    code: 200
+    message: OK
+  headers:
+    Cache-Control:
+    - private, max-age=0
+    Content-Type:
+    - text/html; charset=utf-8
+    Expires:
+    - Thu, 14 Jul 2016 13:35:01 GMT
+    Last-Modified:
+    - Fri, 29 Jul 2016 13:35:01 GMT
+    Vary:
+    - Accept-Encoding
+    Server:
+    - Microsoft-IIS/8.0
+    X-Sharepointhealthscore:
+    - '0'
+    X-Aspnet-Version:
+    - 4.0.30319
+    Sprequestguid:
+    - a590949d-cd8a-e0d7-3cc7-1ee6e5cce15f
+    Request-Id:
+    - a590949d-cd8a-e0d7-3cc7-1ee6e5cce15f
+    X-Frame-Options:
+    - SAMEORIGIN
+    Sprequestduration:
+    - '1182'
+    Spiislatency:
+    - '530'
+    X-Powered-By:
+    - ASP.NET
+    Microsoftsharepointteamservices:
+    - 15.0.0.4711
+    X-Content-Type-Options:
+    - nosniff
+    X-Ms-Invokeapp:
+    - 1; RequireReadOnly
+    Date:
+    - Fri, 29 Jul 2016 13:35:01 GMT
+    Content-Length:
+    - '31698'
+  body:
+    encoding: ASCII-8BIT
+  http_version: 
+recorded_at: Fri, 29 Jul 2016 13:34:14 GMT
