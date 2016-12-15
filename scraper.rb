@@ -47,12 +47,4 @@ def scrape_person(url)
   ScraperWiki.save_sqlite([:name, :term], data)
 end
 
-term = {
-  id: 11,
-  name: '11th Legislative Council',
-  start_date: '2015-03-05',
-  end_date: '2015-03-24'
-}
-ScraperWiki.save_sqlite([:id], term, 'terms')
-
 scrape_list('http://majlis-mesyuarat.gov.bn/JMM%20Site%20Pages/Profil%20Ahli-Ahli%20Majlis%20Mesyuarat%20Negara.aspx')
