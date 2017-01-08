@@ -22,9 +22,9 @@ response:
     Content-Type:
     - text/html; charset=utf-8
     Expires:
-    - Thu, 14 Jul 2016 13:35:18 GMT
+    - Sat, 24 Dec 2016 18:36:57 GMT
     Last-Modified:
-    - Fri, 29 Jul 2016 13:35:18 GMT
+    - Sun, 08 Jan 2017 18:36:57 GMT
     Vary:
     - Accept-Encoding
     Server:
@@ -34,28 +34,31 @@ response:
     X-Aspnet-Version:
     - 4.0.30319
     Sprequestguid:
-    - a990949d-7db8-e0d7-3cc7-127b037e4286
+    - b518c99d-bdbc-e0d7-2df3-1c0db531e262
     Request-Id:
-    - a990949d-7db8-e0d7-3cc7-127b037e4286
+    - b518c99d-bdbc-e0d7-2df3-1c0db531e262
     X-Frame-Options:
     - SAMEORIGIN
     Sprequestduration:
-    - '116'
+    - '162'
     Spiislatency:
-    - '0'
+    - '2'
+    Set-Cookie:
+    - SPUsageId=50a3c506-5ab9-4fb0-9004-658736c0bc05; expires=Sun, 22-Jan-2017 18:36:57
+      GMT; path=/; HttpOnly
     X-Powered-By:
     - ASP.NET
     Microsoftsharepointteamservices:
-    - 15.0.0.4711
+    - 15.0.0.4535
     X-Content-Type-Options:
     - nosniff
     X-Ms-Invokeapp:
     - 1; RequireReadOnly
     Date:
-    - Fri, 29 Jul 2016 13:35:18 GMT
+    - Sun, 08 Jan 2017 18:36:57 GMT
     Content-Length:
-    - '30927'
+    - '30850'
   body:
     encoding: ASCII-8BIT
   http_version: 
-recorded_at: Fri, 29 Jul 2016 13:34:32 GMT
+recorded_at: Sun, 08 Jan 2017 18:35:12 GMT
